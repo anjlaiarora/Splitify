@@ -50,7 +50,7 @@ const Dashboard = ({ loggedInUser, setLoggedInUser }) => {
               <Nav.Link style={navStyle} href="/creategroup">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link style={navStyle} href="/addexpense">Add Expense</Nav.Link>
+              <Nav.Link style={navStyle} href="/addexpense">Explore</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link style={navStyle} href="/expensedetails">Expense Details</Nav.Link>
