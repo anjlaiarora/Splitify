@@ -47,7 +47,7 @@ const Dashboard = ({ loggedInUser, setLoggedInUser }) => {
         <div>
           <Nav fill variant="tabs" defaultActiveKey="/home" style={{ display: 'flex', justifyContent: 'space-between', gap: '25px', paddingTop: '15px',border:"none" }}>
             <Nav.Item>
-              <Nav.Link style={navStyle} href="/creategroup">Create Group</Nav.Link>
+              <Nav.Link style={navStyle} href="/creategroup">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link style={navStyle} href="/addexpense">Add Expense</Nav.Link>
@@ -71,16 +71,16 @@ const Dashboard = ({ loggedInUser, setLoggedInUser }) => {
             gradient={{ from: 'rgb(215 210 220)', to: 'rgb(49 25 129)' }}
             animate
             animateDuration={1000}
-            style={{ fontSize: '100px', marginTop: '150px', fontFamily: 'cursive', paddingLeft:'50px' }}
+            style={{ fontSize: '100px', marginTop: '150px', fontFamily: 'cursive', paddingLeft:'50px', textAlign:'center' }}
           >
             SPLITIFY
           </FancyText>
           <p style={{fontSize:'25px', fontFamily:'monospace', color:'blue', paddingLeft:'25px'}}><b>Easy way for split amount and saving time</b></p>
     <button style={{borderRadius:'10px', borderColor:'slateblue', fontSize:'20px', padding:'10px 80px 10px 80px', marginLeft:'180px', backgroundColor:'teal', color:'white'}} onClick={handleButtonClick}>Get Start</button>
     </div>
-    <div>
+    {/* <div>
       <img src='https://inci.sgp1.cdn.digitaloceanspaces.com/incipientinfo.web/assets/images/portfolio-img/website/cost-split.png' width={700}/>
-      </div>
+      </div> */}
     </div>
     <div style={{paddingTop:'50px'}}>
       <p style={{fontSize:'50px', paddingLeft:'180px', color:'rgb(41, 42, 94)'}}><b>Split your expenses on different scenarios</b>     
