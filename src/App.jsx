@@ -21,21 +21,26 @@ function App() {
 
   return (
     <>
-    <Router>
-    <NavbarCom/>
+      <Router>
 
-      <Routes>
-        <Route path="/register" element={<Register setLoggedInUser={setLoggedInUser} />} />
-        <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
-        <Route path="/" element={<Dashboard loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />} />
-        <Route path="/Splitter" element={<Splitter />} />
-        <Route path='/aboutus' element={<About/>}/>
-        <Route path='explore' element={<Explore/>}/>
-        <Route path='contact' element={<Contact/>}/>
+        <Routes>
+          <Route path="/register" element={<Register setLoggedInUser={setLoggedInUser} />} />
+          <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
+          <Route path='/*' element={
+            <Routes>
+              <NavbarCom />
+              <Route path="" element={<Dashboard loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />} />
+              <Route path="splitter" element={<Splitter />} />
+              <Route path='aboutus' element={<About />} />
+              <Route path='explore' element={<Explore />} />
+              <Route path='contact' element={<Contact />} />
+            </Routes>
+          }></Route>
 
-      </Routes>
-    </Router>
-    
+
+        </Routes>
+      </Router>
+
     </>
   );
 }
