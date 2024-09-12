@@ -33,7 +33,9 @@ function Register({ setLoggedInUser }) {
     setLoggedInUser(newUser);
     navigate('/dashboard');
   };
-
+  const upercase = (string) =>{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card p-4 shadow-lg animate__animated animate__fadeInUp" style={{ maxWidth: '400px', width: '100%' }}>
@@ -45,7 +47,7 @@ function Register({ setLoggedInUser }) {
               type="text"
               className="form-control"
               placeholder="Enter username"
-              value={username}
+              value={upercase(username) }
               onChange={(e) => setUsername(e.target.value)}
               required
             />
