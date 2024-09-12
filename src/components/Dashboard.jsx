@@ -1,31 +1,11 @@
-import React, { useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
-import { RiAccountCircleLine } from "react-icons/ri";
 import FancyText from '@carefully-coded/react-text-gradient';
 import Accordion from 'react-bootstrap/Accordion';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Dashboard = ({ loggedInUser, setLoggedInUser }) => {
-  const navigate = useNavigate();
+const Dashboard = () => {
   
-  useEffect(() => {
-    // Check if the user is logged in, otherwise redirect to login page
-    if (!loggedInUser) {
-      const savedUser = JSON.parse(localStorage.getItem('loggedInUser'));
-      if (savedUser) {
-        setLoggedInUser(savedUser);
-      } else {
-        navigate('/login');
-      }
-    }
-  }, [loggedInUser, navigate, setLoggedInUser]);
-
-  const handleLogout = () => {
-    localStorage.removeItem('loggedInUser');
-    setLoggedInUser(null);
-    navigate('/login');
-  };
 
   const navigate2 = useNavigate(); //const variable for useNavigate.
 
@@ -33,45 +13,20 @@ const Dashboard = ({ loggedInUser, setLoggedInUser }) => {
     navigate2('/Splitter');
   };
 
-  const navStyle = { textDecorationLine: 'none', color: 'white' };
+  
   const size = { fontSize: '25px', color: 'rgb(41, 42, 94)' };
   const size1 = { fontSize: '17px' };
 
   return (
     <div>
-      <div style={{ flexDirection: 'row', display: 'flex', gap: '200px', backgroundColor: 'blue' }}>
-        <div style={{ paddingLeft: '20px' }}>
-          <img src='/images.png' width={50} style={{ paddingTop: '11px', paddingLeft: '5px' }} />
-          <p style={{ float: 'left', fontFamily: 'cursive', color: 'white', fontSize: '25px', paddingLeft: '40px',paddingTop:'11px' }}>Splitify</p>
-        </div>
-        <div>
-          <Nav fill variant="tabs" defaultActiveKey="/home" style={{ display: 'flex', justifyContent: 'space-between', gap: '25px', paddingTop: '15px',border:"none" }}>
-            <Nav.Item>
-              <Nav.Link style={navStyle} href="/creategroup">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link style={navStyle} href="/addexpense">Add Expense</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link style={navStyle} href="/expensedetails">Expense Details</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link style={navStyle} href="/amountsplit">Amount Split</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '10px', fontSize: '20px', color: 'white' }}>
-          <p style={{ fontSize: '20px', paddingTop: '18px' }}><RiAccountCircleLine /></p>
-          <p style={{ cursor: 'pointer', paddingTop:'18px' }} onClick={handleLogout}>Logout</p>
-        </div>
-      </div>
-      <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+      
+      <div style={{ justifyContent: 'space-between', display: 'flex' , marginLeft:'500px' }}>
         <div>
           <FancyText
             gradient={{ from: 'rgb(215 210 220)', to: 'rgb(49 25 129)' }}
             animate
             animateDuration={1000}
-            style={{ fontSize: '100px', marginTop: '150px', fontFamily: 'cursive', paddingLeft:'50px', textAlign:'center' }}
+            style={{ fontSize: '100px', marginTop: '100px', fontFamily: 'cursive', paddingLeft:'60px'}}
           >
             SPLITIFY
           </FancyText>
@@ -83,7 +38,7 @@ const Dashboard = ({ loggedInUser, setLoggedInUser }) => {
       </div> */}
     </div>
     <div style={{paddingTop:'50px'}}>
-      <p style={{fontSize:'50px', paddingLeft:'180px', color:'rgb(41, 42, 94)'}}><b>Split your expenses on different scenarios</b>     
+      <p style={{fontSize:'50px', paddingLeft:'280px', color:'rgb(41, 42, 94)'}}><b>Split your expenses on different scenarios</b>     
        <p style={{paddingLeft:'100px', fontSize:'20px', fontFamily:'cursive'}}>Regardless of your use case, Splitify is here to help track and split your expenses right away</p>
       </p>
       <div style={{display:'flex', justifyContent:'space-evenly'}}>
