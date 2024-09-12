@@ -28,7 +28,6 @@ function App() {
           <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
           <Route path='/*' element={
             <Routes>
-              <NavbarCom />
               <Route path="" element={<Dashboard loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />} />
               <Route path="splitter" element={<Splitter />} />
               <Route path='aboutus' element={<About />} />
