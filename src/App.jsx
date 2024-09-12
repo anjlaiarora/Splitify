@@ -65,15 +65,15 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router> 
       <Routes>
         <Route path="/register" element={<Register setLoggedInUser={setLoggedInUser} />} />
         <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
-        <Route path="/dashboard" element={<Dashboard loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />} />
+        <Route path="/" element={<Dashboard loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />} />
     <Route path="/Splitter" element={<Splitter />} />
 
-      </Routes>
-    </Router>
+      </Routes>                              
+    </Router> 
   );
 }
 
